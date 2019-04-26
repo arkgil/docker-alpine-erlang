@@ -5,7 +5,7 @@ LABEL maintainer="Arkadiusz Gil <arkadiusz@arkgil.net>"
 ENV LANG=en_US.UTF-8 \
   # Set this so that CTRL+G works properly.
   TERM=xterm \
-  ERLANG_VERSION=21.3.6
+  ERLANG_VERSION=21.3.7
 
 WORKDIR /tmp/erlang-build
 
