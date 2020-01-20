@@ -5,7 +5,7 @@ LABEL maintainer="Arkadiusz Gil <arkadiusz@arkgil.net>"
 ENV LANG=en_US.UTF-8 \
   # Set this so that CTRL+G works properly.
   TERM=xterm \
-  ERLANG_VERSION=21.3.8.7
+  ERLANG_VERSION=21.3.8.12
 
 WORKDIR /tmp/erlang-build
 
@@ -65,7 +65,7 @@ RUN \
   --enable-threads \
   --enable-shared-zlib \
   --enable-ssl=dynamic-ssl-lib \
-  --enable-hipe && \
+  --disable-hipe && \
   # Build.
   make -j4 && make install && \
   # Clean up.
