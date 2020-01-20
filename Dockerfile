@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.11
 
 LABEL maintainer="Arkadiusz Gil <arkadiusz@arkgil.net>"
 
@@ -12,8 +12,8 @@ WORKDIR /tmp/erlang-build
 # Install Erlang
 RUN \
   # Add tagged repos as well as the edge repo so that we can selectively install edge packages.
-  echo "@main http://dl-cdn.alpinelinux.org/alpine/v3.8/main" >> /etc/apk/repositories && \
-  echo "@community http://dl-cdn.alpinelinux.org/alpine/v3.8/community" >> /etc/apk/repositories && \
+  echo "@main http://dl-cdn.alpinelinux.org/alpine/v3.11/main" >> /etc/apk/repositories && \
+  echo "@community http://dl-cdn.alpinelinux.org/alpine/v3.11/community" >> /etc/apk/repositories && \
   echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
   # Upgrade Alpine and base packages.
   apk --no-cache --update --available upgrade && \
@@ -65,7 +65,7 @@ RUN \
   --enable-threads \
   --enable-shared-zlib \
   --enable-ssl=dynamic-ssl-lib \
-  --enable-hipe && \
+  --disable-hipe && \
   # Build.
   make -j4 && make install && \
   # Clean up.
