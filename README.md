@@ -1,3 +1,5 @@
+**DEPRECATED** Please use https://hub.docker.com/r/hexpm/erlang instead.
+
 # Erlang/OTP on Alpine Docker image
 
 This repo provides a Dockerfile for building Alpine Docker image with Erlang/OTP installed.
